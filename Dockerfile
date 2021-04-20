@@ -1,7 +1,7 @@
 FROM centos
 
 RUN yum update -y && yum install epel-release -y && yum install python38 -y
-RUN python3 -m pip install playwright -U
+RUN python3 -m pip install playwright==1.9.2 -U
 RUN python3 -m playwright install
 
 # Chromium
@@ -87,6 +87,20 @@ RUN yum update -y && \
     pipewire-libs-0:0.3.6-1.el8.x86_64 \
     zlib-0:1.2.11-16.2.el8_3.x86_64 
 
+# WebKit
+
 RUN yum update -y && \
     yum install -y harfbuzz-icu-1.7.5-3.el8.x86_64 \
-    libvpx
+    libglvnd-glx-1:1.2.0-6.el8.x86_64 \
+    libglvnd-egl-1:1.2.0-6.el8.x86_64 \
+    libnotify-0.7.7-5.el8.x86_64 \
+    opus-1.3-0.4.beta.el8.x86_64 \
+    woff2-1.0.2-4.el8.x86_64 \
+    gstreamer1-plugins-base-1.16.1-1.el8.x86_64 \
+    gstreamer1-plugins-bad-free-1.16.1-1.el8.x86_64 \
+    openjpeg2-2.3.1-6.el8.x86_64 \
+    libwebp-1.0.0-1.el8.x86_64 \
+    enchant-1:1.6.0-21.el8.x86_64 \
+    libsecret-0.18.6-1.el8.x86_64 \
+    hyphen-2.8.8-9.el8.x86_64 \
+    libglvnd-gles-1:1.2.0-6.el8.x86_64
